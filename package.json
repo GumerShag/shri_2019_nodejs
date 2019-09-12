@@ -1,0 +1,24 @@
+{
+  "name": "git_api_node_js",
+  "version": "1.0.0",
+  "description": "API for Git using Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/server.js -a beep -b boop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GumerShag/shri_2019_nodejs.git"
+  },
+  "author": "GumerShag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GumerShag/shri_2019_nodejs/issues"
+  },
+  "homepage": "https://github.com/GumerShag/shri_2019_nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "minimist": "^1.2.0"
+  }
+}
