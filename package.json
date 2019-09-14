@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*-test.js --timeout 5000",
-    "start": "node ./src/server.js -p repos/repo_1",
+    "start": "node ./src/server.js",
     "fix": "prettier --config ./.prettier.config.js --write src/server.js"
   },
   "repository": {
