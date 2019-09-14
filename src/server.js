@@ -11,13 +11,14 @@ const absoluteReposPath = path.resolve(__dirname, repoPath);
 
 app.get('/api/repos/', (req, res) => {
     let { start, limit } = req.query;
-    start = parseInt(start);
-    limit = parseInt(limit);
+    start = start ? parseInt(start) : undefined;
+    limit = limit ? parseInt(limit) : undefined;
 
     if (!fs.existsSync(absoluteReposPath)) {
         res.status(404).json({ error: 'Wrong path to repositories folder.' });
         return;
     }
+
     fs.readdir(absoluteReposPath, (err, repos) => {
         if (err) {
             res.status(500).json({ error: err });
@@ -84,12 +85,12 @@ app.get('/api/repos/:repositoryId/commits/:commitHash/diff', (req, res) => {
     exec(
         `git diff ${commitHash}~ ${commitHash}`,
         { cwd: `${absoluteReposPath}/${repositoryId}` },
-        (err, stdout) => {
+        (err, diff) => {
             if (err) {
                 res.status(500).json({ error: err });
                 return;
             }
-            res.json({ diff: stdout });
+            res.json({ diff });
         }
     );
 });
@@ -188,7 +189,7 @@ app.route('/api/repos/:repositoryId')
             }
         );
     })
-    .post(bodyParser.urlencoded(), (req, res) => {
+    .post(bodyParser.json(), (req, res) => {
         const { repositoryId } = req.params;
         const { url } = req.body;
 

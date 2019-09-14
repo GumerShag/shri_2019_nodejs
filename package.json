@@ -4,7 +4,7 @@
   "description": "API for Git using Node JS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha test/*-test.js --timeout 5000",
     "start": "node ./src/server.js -p repos/repo_1",
     "fix": "prettier --config ./.prettier.config.js --write src/server.js"
   },
@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/GumerShag/shri_2019_nodejs#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
     "express": "^4.17.1",
     "minimist": "^1.2.0",
+    "mocha": "^6.1.4",
     "prettier": "^1.18.2"
   }
 }
