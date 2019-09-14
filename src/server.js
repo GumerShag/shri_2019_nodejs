@@ -83,7 +83,7 @@ app.get('/api/repos/:repositoryId/commits/:commitHash/diff', (req, res) => {
 app.get('/api/repos/:repositoryId/tree/:commitHash*', (req, res) => {
     const { repositoryId } = req.params;
     const { commitHash } = req.params;
-    const path = req.params[0];
+    let path = req.params[0];
 
     exec(
         `git rev-parse ${commitHash}`,
@@ -94,6 +94,7 @@ app.get('/api/repos/:repositoryId/tree/:commitHash*', (req, res) => {
                 return;
             }
             const branchHash = commitHash.trim();
+            path = path.length ? path : '/';
             exec(
                 `git show ${branchHash}:${'.'.concat(path)}`,
                 { cwd: `${absoluteReposPath}/${repositoryId}` },
