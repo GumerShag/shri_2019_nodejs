@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { expect } = require('chai');
 const axios = require('axios');
 const REPO_URL = `https://github.com/jherax/array-sort-by.git`;
 const REPO_NAME = 'TestingRepo';
@@ -47,7 +46,7 @@ describe('Testing GIT API', async () => {
 
     it('Tesing GET all repositories from folder', async () => {
         const response = await axios.get(`${BASE_PATH}`).then();
-        expect(response.data).to.deep.equal([
+        assert(response.data, [
             {
                 id: 'TestingRepo'
             }
