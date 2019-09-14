@@ -11,18 +11,19 @@ const absoluteRepoPath = path.resolve(__dirname, repoPath);
 
 app.get('/api/repos/', (req, res) => {
     if (!fs.existsSync(absoluteRepoPath)) {
-        res.json({error: 'Wrong path to repositories folder.'});
+        res.status(404).json({error: 'Wrong path to repositories folder.'});
         return;
     }
     fs.readdir(absoluteRepoPath, (err, repos) => {
         if (err) {
-            console.log(err);
+            res.status(500).json({error: err});
             return;
         }
         res.set('Content-Type', 'application/json').send(repos.map(id => ({id})));
     })
 
 });
+
 
 app.get('/api/repos/:repositoryId/commits/:commitHash', (req, res) => {
     const {repositoryId} = req.params;
@@ -59,7 +60,7 @@ app.get('/api/repos/:repositoryId/commits/:commitHash/diff', (req, res) => {
 
     exec(`git diff ${commitHash}~ ${commitHash}`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, stdout) => {
         if (err) {
-            console.log(err);
+            res.status(500).json({error: err});
             return;
         }
         res.json({diff: stdout});
@@ -67,73 +68,91 @@ app.get('/api/repos/:repositoryId/commits/:commitHash/diff', (req, res) => {
 
 });
 
-app.get(['/api/repos/:repositoryId', '/api/repos/:repositoryId/tree/:commitHash?/:path*'], (req, res) => {
+app.get('/api/repos/:repositoryId/tree/:commitHash*', (req, res) => {
     const {repositoryId} = req.params;
     const {commitHash} = req.params;
-    const {path} = req.params;
+    const path = req.params[0];
 
-    //todo: hack
-    if (req.originalUrl.indexOf('tree') > -1) {
-        exec(`git rev-parse ${commitHash}`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, commitHash) => {
+    exec(`git rev-parse ${commitHash}`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, commitHash) => {
+        if (err) {
+            res.status(500).json({error: err});
+            return;
+        }
+        const branchHash = commitHash.trim();
+        exec(`git show ${branchHash}:${'.'.concat(path)}`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, content) => {
             if (err) {
                 res.status(500).json({error: err});
                 return;
             }
-            const branchHash = commitHash;
-            exec(`git ls-tree --name-only ${branchHash} ${path}`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, content) => {
-                if (err) {
-                    console.log(err);
-                    return;
-                }
-
-                const contentList = content.split('\n');
-                res.json(contentList.map(name => name));
-
-            });
-
+            //fixme: dirty hack to format output
+            const contentList = content.split('\n\n')[1].split('\n');
+            res.json(contentList.filter(name => name));
         });
-    } else {
-        //fixme: Should return from Main branch
+    });
+});
+
+app.get('/api/repos/:repositoryId/blob/:commitHash*', (req, res) => {
+    const {repositoryId} = req.params;
+    const {commitHash} = req.params;
+    const pathToFile = req.params[0];
+
+    exec(`git rev-parse ${commitHash}`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, commitHash) => {
+        if (err) {
+            res.status(500).json({error: err});
+            return;
+        }
+        const branchHash = commitHash.trim();
+        exec(`git show ${branchHash}:${'.'.concat(pathToFile)}`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, content) => {
+            if (err) {
+                res.status(500).json({error: err});
+                return;
+            }
+            res.send(content);
+        });
+    });
+});
+
+app.route('/api/repos/:repositoryId')
+    .get((req, res) => {
+        const {repositoryId} = req.params;
+
         exec(`git ls-tree HEAD --name-only`, {cwd: `${absoluteRepoPath}/${repositoryId}`}, (err, content) => {
             if (err) {
-                console.log(err);
+                res.status(500).json({error: err});
                 return;
             }
             const contentList = content.split('\n');
             res.json(contentList.map(name => name));
         })
-    }
-});
-
-app.delete('/api/repos/:repositoryId', (req, res) => {
-    const {repositoryId} = req.params;
-    const command = os.platform === 'win32' ? 'rmdir' : 'rm -rf';
-
-    exec(`${command} ${repositoryId}`, {cwd: `${absoluteRepoPath}`}, (err) => {
-        if (err) {
-            res.status(500).json({message: err});
-            return;
-        }
-        res.json({message: 'OK'});
     })
-});
+    .delete((req, res) => {
+        const {repositoryId} = req.params;
+        const command = os.platform() === 'win32' ? 'rmdir /Q /S' : 'rm -rf';
 
-app.post('/api/repos/:repositoryId', bodyParser.urlencoded(), (req, res) => {
-    const {repositoryId} = req.params;
-    const {url} = req.body;
-
-    exec(`git clone ${url} ${repositoryId}`, {cwd: `${absoluteRepoPath}`}, (err) => {
-        if (err) {
-            if (err.message.indexOf('HttpRequestException encountered') > -1) {
-                res.status(404).json({message: "Repository doesn't exist"});
+        exec(`${command} ${repositoryId}`, {cwd: `${absoluteRepoPath}`}, (err) => {
+            if (err) {
+                res.status(500).json({message: err});
                 return;
             }
-            res.status(500).json({message: err});
-            return;
-        }
-
-        res.status(201).json({message: 'OK', id: repositoryId});
+            res.json({message: 'OK'});
+        })
     })
-});
+    .post(bodyParser.urlencoded(), (req, res) => {
+        const {repositoryId} = req.params;
+        const {url} = req.body;
+
+        exec(`git clone ${url} ${repositoryId}`, {cwd: `${absoluteRepoPath}`}, (err) => {
+            if (err) {
+                if (err.message.indexOf('HttpRequestException encountered') > -1) {
+                    res.status(404).json({message: "Repository doesn't exist"});
+                    return;
+                }
+                res.status(500).json({message: err});
+                return;
+            }
+
+            res.status(201).json({message: 'OK', id: repositoryId});
+        })
+    });
 
 app.listen(3000);
