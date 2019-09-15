@@ -10,10 +10,6 @@ const repoPath = args.p;
 const absoluteReposPath = path.resolve(__dirname, repoPath);
 
 app.get('/api/repos/', (req, res) => {
-    let { start, limit } = req.query;
-    start = start ? parseInt(start) : undefined;
-    limit = limit ? parseInt(limit) : undefined;
-
     if (!fs.existsSync(absoluteReposPath)) {
         res.status(404).json({ error: 'Wrong path to repositories folder.' });
         return;
@@ -24,23 +20,16 @@ app.get('/api/repos/', (req, res) => {
             res.status(500).json({ error: err });
             return;
         }
-
-        //Adding simple pagination
-        if (typeof start !== 'undefined' && typeof limit !== 'undefined') {
-            let reposPerPage = [];
-            for (let i = start; i < limit + start; i++) {
-                if (repos[i] && i < repos.length) {
-                    reposPerPage.push({ id: repos[i] });
-                }
-            }
-            return res.json(reposPerPage);
-        } else res.json(repos.map(id => ({ id })));
+        else res.json(repos.map(id => ({ id })));
     });
 });
 
 app.get('/api/repos/:repositoryId/commits/:commitHash', (req, res) => {
     const { repositoryId } = req.params;
     const { commitHash } = req.params;
+    let { start, limit } = req.query;
+    start = start ? parseInt(start) : undefined;
+    limit = limit ? parseInt(limit) : undefined;
 
     exec(
         `git rev-parse ${commitHash}`,
@@ -67,11 +56,20 @@ app.get('/api/repos/:repositoryId/commits/:commitHash', (req, res) => {
                         return;
                     }
                     let commitsArray = logData.replace(/@/g, '"').split('\n');
-                    res.json(
-                        commitsArray.map(commit => {
-                            return JSON.parse(`${commit}`);
-                        })
-                    );
+                     //Adding simple pagination
+                    if (typeof start !== 'undefined' && typeof limit !== 'undefined') {
+                        let commitsPerPage = [];
+                        for (let i = start; i < limit + start; i++) {
+                            if (commitsArray[i] && i < commitsArray.length) {
+                                commitsPerPage.push(JSON.parse(`${commitsArray[i]}`));
+                            }
+                        }
+                        return res.json(reposPerPage);
+                    } else res.json(
+                                    commitsArray.map(commit => {
+                                        return JSON.parse(`${commit}`);
+                                    })
+                                );
                 }
             );
         }
