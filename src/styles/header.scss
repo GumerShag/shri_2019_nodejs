@@ -1,0 +1,11 @@
+.header {
+  display: grid;
+  grid-column-gap: 40px;
+  grid-template-columns: auto 1fr;
+  box-sizing: border-box;
+  padding: 16px 32px 20px 32px;
+  background-color: var(--color-bg-default);
+  max-width: 1440px;
+  border-bottom: solid 1px  var(--color-border-ghost);
+
+}

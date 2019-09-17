@@ -1,0 +1,19 @@
+.theme {
+  font-family: Arial;
+  --typo-size-s: 14px;
+  --typo-size-m: 16px;
+  --typo-size-l: 24px;
+
+  &_color_default {
+    --color-typo-primary: #000000;
+    --color-typo-secondary: #7F8285;
+    --color-typo-visited: #434445;
+    --color-typo-ghost: #B8BEC3;
+    --color-typo-link: #1774E9;
+
+    --color-bg-default: #FFFFFF;
+
+    --color-border-accent: #FF3029;
+    --color-border-ghost:#E5E5E5;
+  }
+}

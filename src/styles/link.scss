@@ -1,0 +1,22 @@
+.link {
+  text-decoration: none;
+  &_color-black {
+    color: var(--color-typo-primary);
+  }
+  &_color-ghost {
+    color: var(--color-typo-ghost);
+  }
+  &_color-main {
+    color: var;
+  }
+  &_size-s {
+    font-size: var(--size-s) ;
+  }
+  &_size-m {
+    font-size: var(--size-m);
+  }
+
+  &_weight-bold {
+    font-weight: bold;
+  }
+}

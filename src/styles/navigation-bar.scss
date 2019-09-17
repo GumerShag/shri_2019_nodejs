@@ -1,0 +1,29 @@
+.navigation-bar {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+
+  &__tab {
+    &_selected {
+      border-bottom: solid 3px var(--color-border-accent);
+    }
+    //&:after {
+    //  position: absolute;
+    //  right: 0;
+    //  display: inline-block;
+    //  content: url("../assets/arrow.svg");
+    //  font-size: 11px;
+    //  font-weight: 400;
+    //}
+    &_size_s {
+      padding: 10px 0;
+    }
+    &_size_m {
+      padding: 20px 0;
+    }
+
+    &_indent-r {
+      margin-right: 32px;
+    }
+  }
+}

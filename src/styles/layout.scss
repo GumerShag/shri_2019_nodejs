@@ -1,0 +1,8 @@
+.layout {
+  &__container {
+    display: grid;
+    background-color: var(--color-bg-default);
+    align-items: center;
+    grid-template-columns: 1fr 1144px 1fr;
+  }
+}

@@ -1,0 +1,26 @@
+.text {
+  &_size-s {
+    font-size: var(--typo-size-s);
+  }
+  &_size-m {
+    font-size: var(--typo-size-m);
+  }
+  &_size-l {
+    font-size: var(--typo-size-l);
+  }
+  &_color-ghost {
+    color: var(--color-typo-ghost);
+  }
+
+  &_color-link {
+    color: var(--color-typo-link);
+  }
+
+  &_color-primary {
+    color: var(--color-typo-primary);
+  }
+
+  &_bold {
+    font-weight: bold;
+  }
+}
