@@ -6,6 +6,12 @@
   padding: 16px 32px 20px 32px;
   background-color: var(--color-bg-default);
   max-width: 1440px;
+  margin: 0 auto;
   border-bottom: solid 1px  var(--color-border-ghost);
+
+  //fixme: breakpoint to var
+  @media screen and (max-width: 360px) {
+    max-width: 360px;
+  }
 
 }

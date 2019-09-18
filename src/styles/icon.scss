@@ -1,0 +1,16 @@
+.icon {
+  &_size-m {
+    width: 14px;
+    height: 12px;
+  }
+
+  &__folder {
+    position: absolute;
+    background: url('../assets/folder.svg') no-repeat;
+  }
+
+  &__paper {
+    position: absolute;
+    background: url('../assets/paper-icon.svg') no-repeat;
+  }
+}

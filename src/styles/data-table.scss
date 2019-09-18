@@ -1,0 +1,27 @@
+.data-table {
+  * {
+    box-sizing: border-box;
+  }
+  display: grid;
+  min-width: 100%;
+  grid-template-columns: 8px minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
+
+  @media screen and (max-width:360px) {
+    display: block;
+  }
+
+  &__head {
+    display: contents;
+    @media screen and (max-width:360px) {
+      display: none;
+    }
+  }
+
+  &__row {
+    display: contents;
+  }
+
+  &__body {
+    display: contents;
+  }
+}
