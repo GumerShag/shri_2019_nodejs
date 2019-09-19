@@ -1,0 +1,51 @@
+.timeline {
+  position: relative;
+  list-style-type: none;
+
+  &__item {
+    padding-left: 56px;
+    position: relative;
+    //fixme: Think about better selector
+    &:last-child > .timeline__item-tail:before{
+      content: none;
+    }
+  }
+
+  &__item-tail {
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 15px;
+
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 41px;
+      left: 18px;
+      height:calc(100% - 44px);
+      border-left: 2px solid var(--color-typo-ghost);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: var(--color-icon-ghost) url("../assets/graph-icon.svg")  no-repeat center;
+      border-radius: 100px;
+      left: 0;
+    }
+
+
+
+
+
+  }
+  &__item-description {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: center;
+    padding-bottom: 16px;
+  }
+
+}

@@ -1,6 +1,6 @@
 .icon {
   &_size-m {
-    width: 14px;
+    width: 16px;
     height: 12px;
   }
 
@@ -12,5 +12,13 @@
   &__paper {
     position: absolute;
     background: url('../assets/paper-icon.svg') no-repeat;
+  }
+
+  &__arrow {
+    background: url('../assets/arrow.svg') no-repeat;
+  }
+
+  &__code {
+    background: url('../assets/code-icon.svg') no-repeat;
   }
 }

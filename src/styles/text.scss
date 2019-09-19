@@ -1,15 +1,25 @@
 .text {
   &_size-s {
     font-size: var(--typo-size-s);
+    line-height: 20px;
   }
   &_size-m {
     font-size: var(--typo-size-m);
+    line-height: 20px;
   }
   &_size-l {
     font-size: var(--typo-size-l);
+    line-height: 20px;
   }
   &_color-ghost {
     color: var(--color-typo-ghost);
+  }
+  &_color-secondary {
+    color: var(--color-typo-secondary);
+  }
+
+  &_color-second-gray {
+    color: var(--color-typo-second-gray);
   }
 
   &_color-link {
