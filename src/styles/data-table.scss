@@ -3,8 +3,13 @@
     box-sizing: border-box;
   }
   display: grid;
-  min-width: 100%;
-  grid-template-columns: 8px minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
+
+  &_col-5 {
+    grid-template-columns: 8px repeat(5, 1fr);
+  }
+  &_col-2 {
+    grid-template-columns: 8px repeat(2, 1fr);
+  }
 
   @media screen and (max-width:360px) {
     display: block;

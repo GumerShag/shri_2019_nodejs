@@ -21,4 +21,9 @@
   &__code {
     background: url('../assets/code-icon.svg') no-repeat;
   }
+
+  &__branch {
+    position: absolute;
+    background: url("../assets/branch-icon.svg") no-repeat;
+  }
 }
