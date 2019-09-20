@@ -1,7 +1,5 @@
 .data-table {
-  * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
   display: grid;
 
   &_col-5 {

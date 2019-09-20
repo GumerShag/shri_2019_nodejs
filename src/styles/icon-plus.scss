@@ -1,13 +1,9 @@
 .icon-plus {
-    grid-template-columns: 0fr auto;
-
-    &_vertical-align_center {
-        align-items: center;
-        vertical-align: bottom;
-    }
 
     &__icon {
         display: inline-block;
+        align-self: center;
+        vertical-align: middle;
         &_indent-r_m {
             margin-right: 8px;
         }

@@ -1,5 +1,9 @@
 .link {
   text-decoration: none;
+  &_color-primary {
+    color: var(--color-typo-link);
+  }
+
   &_color-black {
     color: var(--color-typo-primary);
   }

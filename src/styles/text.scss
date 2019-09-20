@@ -29,6 +29,13 @@
   &_color-primary {
     color: var(--color-typo-primary);
   }
+  &_color-code-primary {
+    color: var(--color-code-font-primary);
+  }
+
+  &_color-code-secondary {
+    color: var(--color-code-font-secondary);
+  }
 
   &_bold {
     font-weight: bold;
