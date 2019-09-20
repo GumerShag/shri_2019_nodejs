@@ -1,17 +1,37 @@
 .crumbs-bar {
   padding: 12px 0;
-  transition: width .2s ease-out;
-  white-space: nowrap;
   font-size: var(--typo-size-m);
   border-bottom: 1px solid var(--color-border-ghost);
 
   &__content {
-    display: table;
+    display: inline-block;
   }
 
   &__link {
     margin-right: 8px;
     cursor: pointer;
+
+    &_current {
+      font-weight: bold;
+      color: var(--color-typo-primary);
+    }
+
+    &_previous {
+      font-weight: bold;
+      color: var(--color-typo-ghost);
+      margin-right: 16px;
+      position: relative;
+
+      &:after {
+        content: '/';
+        position: absolute;
+        right: -14px;
+        color: var(--color-typo-ghost);
+      }
+    }
+  }
+  @media screen and (max-width: 360px) {
+    padding: 12px 16px;
   }
 
 }

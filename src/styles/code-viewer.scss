@@ -11,6 +11,13 @@
     border: 1px solid var(--color-border-ghost);
   }
 
+  &__header-info {
+
+  }
+  &__header-controls {
+
+  }
+
   &__body {
     font-family: PT Mono, monospace;
     font-style: normal;
@@ -27,7 +34,22 @@
 
   &__row {
     display: grid;
-    grid-template-columns: 32px 1fr;
+
+    &_diff {
+      grid-template-columns: 32px 32px 1fr;
+    }
+
+    &_line {
+      grid-template-columns: 32px 1fr;
+    }
+
+    &_change-add {
+      background-color: var(--color-bg-added);
+    }
+
+    &_change-remove {
+      background-color: var(--color-bg-removed);
+    }
   }
   &__row-number {
     color: var(--color-typo-ghost);
@@ -39,4 +61,13 @@
     word-break: break-all;
   }
 
+  &__info-toolbar {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: left;
+    padding: 8px 12px;
+    background: var(--color-bg-light-blue);
+  }
+  &__info-toolbar-buttons {
+  }
 }

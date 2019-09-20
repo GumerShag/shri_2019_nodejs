@@ -2,15 +2,32 @@
   padding: 12px 0;
   &__title {
     font-size: var(--typo-size-l);
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+  }
+  &__title-info {
+
+  }
+
+  &__title-controls {
+
   }
   &__dropdown-menu {
 
   }
 
   &__info {
-    margin: 12px 0 0;
+  }
+
+  &__info-indent-t {
+    margin-top: 12px;
   }
   &__content {
 
+  }
+
+  @media screen and (max-width: 360px) {
+    padding: 12px 16px;
   }
 }

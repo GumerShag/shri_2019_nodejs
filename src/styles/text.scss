@@ -37,6 +37,16 @@
     color: var(--color-code-font-secondary);
   }
 
+  &_color-lilac {
+    color: var(--color-typo-lilac);
+  }
+  &_color-positive {
+    color: var(--color-typo-positive);
+  }
+  &_color-negative {
+    color: var(--color-typo-negative);
+  }
+
   &_bold {
     font-weight: bold;
   }

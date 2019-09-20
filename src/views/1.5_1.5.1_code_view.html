@@ -10,40 +10,39 @@
     <header class="header">
         <span class="logo"></span>
         <nav class="navigation-bar">
-            <div class="icon-plus">
-                <div class="icon-plus icon-plus__block icon-plus_vertical-align_center">
-                    <a class="navigation-bar__tab navigation-bar__tab_selected navigation-bar__tab_size-m">
-                        <span class="dropdown-menu">
-                            <span class="drop-down-menu__text text_size-m text_color-primary"><span class="text_bold">Repository</span> Arc</span>
-                            <div class="drop-down-menu__content">
-                                <p>master</p>
-                                <p>develop</p>
-                            </div>
-                        </span>
-                    </a>
-                </div>
-                <div class="icon-plus icon-plus__icon icon icon__arrow icon_size-m icon-plus_vertical-align_center icon-plus__icon_indent-l_m"/>
-            </div>
+            <a class="navigation-bar__tab navigation-bar__tab_selected navigation-bar__tab_size-m">
+                <span class="drop-down-menu">
+                    <span class="drop-down-menu__text text_size-m text_color-primary"><span
+                            class="text_bold">Repository</span> Arc</span>
+                    <div class="drop-down-menu__content">
+                        <p>master</p>
+                        <p>develop</p>
+                    </div>
+                </span>
+            </a>
         </nav>
     </header>
     <main class="main-panel">
         <div class="crumbs-bar">
             <div class="crumbs-bar__content">
-                <span class="link link_color-black link_weight-bold">arcadia</span>
+                <span class="link link_color-ghost link_weight-bold crumbs-bar__link_previous text_size-s">root</span>
+                <span class="link link_color-ghost link_weight-bold crumbs-bar__link_previous text_size-s">arcadia</span>
+                <span class="link link_color-ghost link_weight-bold crumbs-bar__link_previous text_size-s">adapter</span>
+                <span class="link link_color-black link_weight-bold crumbs-bar__link_current text_size-s">ya.make</span>
             </div>
         </div>
         <div class="panel-header">
             <div class="panel-header__title">
-                <span class="text text_size-l">arcadia</span>
-                <span class="icon-plus">
+                <div class="panel-header__info"><span class="text text_size-l">arcadia</span>
+                    <span class="icon-plus">
                     <div class="icon-plus icon-plus__block">
                         <span class="drop-down-menu__text text_size-l text_color-ghost">trunk</span>
                     </div>
                     <div class="icon-plus__icon icon-plus__icon icon icon__arrow icon_size-m icon-plus__icon_indent-l_m"></div>
-                </span>
+                </span></div>
             </div>
 
-            <div class="panel-header__info">
+            <div class="panel-header__info panel-header__info-indent-t">
                 <span class="text text_size-s">Last commit</span>
                 <a href='#' class="link link_size-s text_color-link">c45fdf</a>
                 <span class="text text_size-s">on</span>
@@ -76,147 +75,147 @@
                     </button>
                 </div>
                 <div class="code-viewer__body">
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">1</div>
                         <div class="code-viewer__row-content text_color-ghost">#!/usr/bin/env python</div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">2</div>
                         <div class="code-viewer__row-content text_color-code-primary"><span
                                 class="text_bold">import</span> os
                         </div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">3</div>
                         <div class="code-viewer__row-content text_color-code-primary"><span
                                 class="text_bold">import</span> sys
                         </div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">4</div>
                         <div class="code-viewer__row-content text_color-code-primary"><span
                                 class="text_bold">import</span> platform
                         </div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">5</div>
                         <div class="code-viewer__row-content text_color-code-primary"><span
                                 class="text_bold">import</span> json
                         </div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">6</div>
                         <div class="code-viewer__row-content"></div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">7</div>
                         <div class="code-viewer__row-content">URLS = [<span class="link link_color-primary">'https://proxy.sandbox.yandex-team.ru/453818264'</span>,
                             <span class="link link_color-primary">'http://storage-int.mds.yandex.net/get-sandbox/110738/by_platform.json.453815347'</span>]
                         </div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">8</div>
                         <div class="code-viewer__row-content">MD5 = '7f5a85f9c28d35c3a76d8cea7af51106'</div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">9</div>
                         <div class="code-viewer__row-content"></div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">10</div>
                         <div class="code-viewer__row-content text_color-code-primary">RETRIES = 5</div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">11</div>
                         <div class="code-viewer__row-content text_color-code-primary">HASH_PREFIX = 10</div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">12</div>
                         <div class="code-viewer__row-content text_color-code-primary"></div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">13</div>
                         <div class="code-viewer__row-content text_color-code-primary">HOME_DIR =
                             os.path.expanduser('~')
                         </div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">14</div>
                         <div class="code-viewer__row-content text_color-code-primary"></div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">15</div>
                         <div class="code-viewer__row-content text_color-code-primary"></div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">16</div>
                         <div class="code-viewer__row-content text_color-code-primary"><span class="text_bold">def</span>
                             <span class="text_color-code-secondary text_bold">create_dirs</span>(path):
                         </div>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">17</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;&nbsp;<span
                                 class="text_bold">try:</span></span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">18</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;os.makedirs(path)</span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">19</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;&nbsp;<span
                                 class="text_bold">except</span> OSError <span class="text_bold">as</span> e:</span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">20</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                                 class="text_bold">import</span> errno</span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">22</div>
                         <span class="code-viewer__row-content text_color-code-primary"></span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">23</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                                 class="text_bold">if</span>&nbsp;e.errno&nbsp;!=&nbsp;errno.EEXIST:</span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">24</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
                                 class="text_bold">raise</span></span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">25</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;<span
                                 class="text_bold">return</span>&nbsp;path</span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">26</div>
                         <span class="code-viewer__row-content text_color-code-primary"></span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">27</div>
                         <span class="code-viewer__row-content text_color-code-primary"></span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">28</div>
                         <span class="code-viewer__row-content text_color-code-primary">def&nbsp;misc_root():</span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">29</div>
                         <span class="code-viewer__row-content text_color-code-primary">&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;create_dirs(os.getenv('YA_CACHE_DIR')&nbsp;or&nbsp;os.path.join(HOME_DIR,&nbsp;'.ya'))</span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">30</div>
                         <span class="code-viewer__row-content text_color-code-primary"></span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">31</div>
                         <span class="code-viewer__row-content text_color-code-primary"></span>
                     </div>
-                    <div class="code-viewer__row">
+                    <div class="code-viewer__row code-viewer__row_line">
                         <div class="code-viewer__row-number">32</div>
                         <span class="code-viewer__row-content text_color-code-primary">def&nbsp;tool_root():</span>
                     </div>
