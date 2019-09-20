@@ -7,7 +7,8 @@
     "test": "mocha test/*-test.js --timeout 5000",
     "start": "node ./src/server.js",
     "fix": "prettier --config ./.prettier.config.js --write src/server.js",
-    "start:webpack": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
+    "start:webpack": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
+    "build": "webpack --config webpack/webpack.config.prod.js  --colors"
   },
   "repository": {
     "type": "git",
