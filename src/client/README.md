@@ -21,6 +21,6 @@
 ### Запуск тестов среды разработки 
 `npm run start:webpack`
 ### Поправить форматирование в стилях
-`npm run fix`
+`npm run fix:css`
 
 
