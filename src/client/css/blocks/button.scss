@@ -1,23 +1,23 @@
 .button {
-  border-radius: 3px;
-  box-sizing: border-box;
-  background: var(--color-bg-ghost);
-  cursor: pointer;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background: var(--color-bg-ghost);
+    cursor: pointer;
 
-  &_border {
-    border: 1px solid var(--color-border-gray);
-  }
+    &_border {
+        border: 1px solid var(--color-border-gray);
+    }
 
-  &_space_a {
-    padding: 8px;
-  }
+    &_space_a {
+        padding: 8px;
+    }
 
-  &_dark {
-    background: var(--color-bg-dark-gray);
-  }
+    &_dark {
+        background: var(--color-bg-dark-gray);
+    }
 
-  &_transparent {
-    background: transparent;
-    border: none;
-  }
+    &_transparent {
+        background: transparent;
+        border: none;
+    }
 }

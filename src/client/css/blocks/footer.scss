@@ -1,22 +1,21 @@
 .footer {
-  &,
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-  }
-
-  &__content {
-    display: grid;
-    padding: 18px 20px;
-    margin: 0 auto;
-    justify-content: space-between;
-    max-width: 1440px;
-    grid-template-columns: 1fr 120px auto;
-
-    @media screen and (max-width: 360px) {
-      display: none;
+    &,
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
     }
 
-  }
+    &__content {
+        display: grid;
+        padding: 18px 20px;
+        margin: 0 auto;
+        justify-content: space-between;
+        max-width: 1440px;
+        grid-template-columns: 1fr 120px auto;
+
+        @media screen and (max-width: 360px) {
+            display: none;
+        }
+    }
 }

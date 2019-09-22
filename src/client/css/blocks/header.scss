@@ -1,18 +1,17 @@
 .header {
-  display: grid;
-  grid-column-gap: 40px;
-  grid-template-columns: auto 1fr;
-  box-sizing: border-box;
-  padding: 16px 32px 20px 32px;
-  background-color: var(--color-bg-default);
-  max-width: 1440px;
-  margin: 0 auto;
-  border-bottom: solid 1px  var(--color-border-ghost);
+    display: grid;
+    grid-column-gap: 40px;
+    grid-template-columns: auto 1fr;
+    box-sizing: border-box;
+    padding: 16px 32px 20px 32px;
+    background-color: var(--color-bg-default);
+    max-width: 1440px;
+    margin: 0 auto;
+    border-bottom: solid 1px var(--color-border-ghost);
 
-  //fixme: breakpoint to var
-  @media screen and (max-width: 360px) {
-    grid-column-gap: 26px;
-    padding: 16px 16px 20px 16px;
-  }
-
+    //fixme: breakpoint to var
+    @media screen and (max-width: 360px) {
+        grid-column-gap: 26px;
+        padding: 16px 16px 20px 16px;
+    }
 }

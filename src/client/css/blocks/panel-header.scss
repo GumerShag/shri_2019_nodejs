@@ -1,33 +1,29 @@
 .panel-header {
-  padding: 12px 0;
-  &__title {
-    font-size: var(--typo-size-l);
-    display: grid;
-    grid-auto-flow: column;
-    justify-content: space-between;
-  }
-  &__title-info {
+    padding: 12px 0;
+    &__title {
+        font-size: var(--typo-size-l);
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+    }
+    &__title-info {
+    }
 
-  }
+    &__title-controls {
+    }
+    &__dropdown-menu {
+    }
 
-  &__title-controls {
+    &__info {
+    }
 
-  }
-  &__dropdown-menu {
+    &__info-indent-t {
+        margin-top: 12px;
+    }
+    &__content {
+    }
 
-  }
-
-  &__info {
-  }
-
-  &__info-indent-t {
-    margin-top: 12px;
-  }
-  &__content {
-
-  }
-
-  @media screen and (max-width: 360px) {
-    padding: 12px 16px;
-  }
+    @media screen and (max-width: 360px) {
+        padding: 12px 16px;
+    }
 }

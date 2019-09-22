@@ -1,31 +1,31 @@
 .data-table {
-  box-sizing: border-box;
-  display: grid;
+    box-sizing: border-box;
+    display: grid;
 
-  &_col-5 {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  &_col-2 {
-    grid-template-columns: 8px repeat(2, 1fr);
-    grid-column-gap: 8px;
-  }
-
-  @media screen and (max-width:360px) {
-    display: block;
-  }
-
-  &__head {
-    display: contents;
-    @media screen and (max-width:360px) {
-      display: none;
+    &_col-5 {
+        grid-template-columns: repeat(5, 1fr);
     }
-  }
+    &_col-2 {
+        grid-template-columns: 8px repeat(2, 1fr);
+        grid-column-gap: 8px;
+    }
 
-  &__row {
-    display: contents;
-  }
+    @media screen and (max-width: 360px) {
+        display: block;
+    }
 
-  &__body {
-    display: contents;
-  }
+    &__head {
+        display: contents;
+        @media screen and (max-width: 360px) {
+            display: none;
+        }
+    }
+
+    &__row {
+        display: contents;
+    }
+
+    &__body {
+        display: contents;
+    }
 }

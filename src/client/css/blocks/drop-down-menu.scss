@@ -1,34 +1,32 @@
 .drop-down-menu {
-  position: relative;
-  display: inline-block;
-
-
-  &__text {
     position: relative;
-    cursor: pointer;
+    display: inline-block;
 
-  }
-  &__content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    padding: 12px 0;
-    z-index: 1;
-  }
+    &__text {
+        position: relative;
+        cursor: pointer;
+    }
+    &__content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        padding: 12px 0;
+        z-index: 1;
+    }
 
-  &__content-active {
-    display: block;
-  }
+    &__content-active {
+        display: block;
+    }
 
-  &:after {
-    position: absolute;
-    content: '';
-    width: 8px;
-    height: 8px;
-    top: 8px;
-    margin-left: 6px;
-    right: -14px;
-    background: url("./assets/arrow.svg")  no-repeat center;
-  }
+    &:after {
+        position: absolute;
+        content: '';
+        width: 8px;
+        height: 8px;
+        top: 8px;
+        margin-left: 6px;
+        right: -14px;
+        background: url('./assets/arrow.svg') no-repeat center;
+    }
 }

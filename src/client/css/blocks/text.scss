@@ -1,53 +1,53 @@
 .text {
-  &_size-s {
-    font-size: var(--typo-size-s);
-    line-height: 20px;
-  }
-  &_size-m {
-    font-size: var(--typo-size-m);
-    line-height: 20px;
-  }
-  &_size-l {
-    font-size: var(--typo-size-l);
-    line-height: 20px;
-  }
-  &_color-ghost {
-    color: var(--color-typo-ghost);
-  }
-  &_color-secondary {
-    color: var(--color-typo-secondary);
-  }
+    &_size-s {
+        font-size: var(--typo-size-s);
+        line-height: 20px;
+    }
+    &_size-m {
+        font-size: var(--typo-size-m);
+        line-height: 20px;
+    }
+    &_size-l {
+        font-size: var(--typo-size-l);
+        line-height: 20px;
+    }
+    &_color-ghost {
+        color: var(--color-typo-ghost);
+    }
+    &_color-secondary {
+        color: var(--color-typo-secondary);
+    }
 
-  &_color-second-gray {
-    color: var(--color-typo-second-gray);
-  }
+    &_color-second-gray {
+        color: var(--color-typo-second-gray);
+    }
 
-  &_color-link {
-    color: var(--color-typo-link);
-  }
+    &_color-link {
+        color: var(--color-typo-link);
+    }
 
-  &_color-primary {
-    color: var(--color-typo-primary);
-  }
-  &_color-code-primary {
-    color: var(--color-code-font-primary);
-  }
+    &_color-primary {
+        color: var(--color-typo-primary);
+    }
+    &_color-code-primary {
+        color: var(--color-code-font-primary);
+    }
 
-  &_color-code-secondary {
-    color: var(--color-code-font-secondary);
-  }
+    &_color-code-secondary {
+        color: var(--color-code-font-secondary);
+    }
 
-  &_color-lilac {
-    color: var(--color-typo-lilac);
-  }
-  &_color-positive {
-    color: var(--color-typo-positive);
-  }
-  &_color-negative {
-    color: var(--color-typo-negative);
-  }
+    &_color-lilac {
+        color: var(--color-typo-lilac);
+    }
+    &_color-positive {
+        color: var(--color-typo-positive);
+    }
+    &_color-negative {
+        color: var(--color-typo-negative);
+    }
 
-  &_bold {
-    font-weight: bold;
-  }
+    &_bold {
+        font-weight: bold;
+    }
 }

@@ -1,25 +1,25 @@
 .link {
-  text-decoration: none;
-  &_color-primary {
-    color: var(--color-typo-link);
-  }
+    text-decoration: none;
+    &_color-primary {
+        color: var(--color-typo-link);
+    }
 
-  &_color-black {
-    color: var(--color-typo-primary);
-  }
-  &_color-ghost {
-    color: var(--color-typo-ghost);
-  }
-  &_size-s {
-    font-size: var(--typo-size-s) ;
-    line-height: 20px;
-  }
-  &_size-m {
-    font-size: var(--typo-size-m);
-    line-height: 20px;
-  }
+    &_color-black {
+        color: var(--color-typo-primary);
+    }
+    &_color-ghost {
+        color: var(--color-typo-ghost);
+    }
+    &_size-s {
+        font-size: var(--typo-size-s);
+        line-height: 20px;
+    }
+    &_size-m {
+        font-size: var(--typo-size-m);
+        line-height: 20px;
+    }
 
-  &_weight-bold {
-    font-weight: bold;
-  }
+    &_weight-bold {
+        font-weight: bold;
+    }
 }

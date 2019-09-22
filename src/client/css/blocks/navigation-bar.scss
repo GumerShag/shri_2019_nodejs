@@ -1,24 +1,23 @@
 .navigation-bar {
-  display: inline-block;
-  cursor: pointer;
-  user-select: none;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
 
-  &__tab {
-    &_selected {
-      border-bottom: solid 3px var(--color-border-accent);
-      padding-bottom: 18px;
+    &__tab {
+        &_selected {
+            border-bottom: solid 3px var(--color-border-accent);
+            padding-bottom: 18px;
+        }
 
-    }
+        &_size_s {
+            padding: 10px 0;
+        }
+        &_size_m {
+            padding: 20px 0;
+        }
 
-    &_size_s {
-      padding: 10px 0;
+        &_indent-r {
+            margin-right: 32px;
+        }
     }
-    &_size_m {
-      padding: 20px 0;
-    }
-
-    &_indent-r {
-      margin-right: 32px;
-    }
-  }
 }
