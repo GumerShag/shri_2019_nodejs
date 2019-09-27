@@ -10,13 +10,13 @@
         grid-column-gap: 8px;
     }
 
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 720px) {
         display: block;
     }
 
     &__head {
         display: contents;
-        @media screen and (max-width: 360px) {
+        @media screen and (max-width: 720px) {
             display: none;
         }
     }

@@ -14,7 +14,7 @@
         max-width: 1440px;
         grid-template-columns: 1fr 120px auto;
 
-        @media screen and (max-width: 360px) {
+        @media screen and (max-width: 720px) {
             display: none;
         }
     }
