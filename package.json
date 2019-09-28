@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/*-test.js --timeout 5000",
-    "start": "node ./src/server.js",
+    "start": "node ./src/server/server.js",
     "fix:css": "prettier --config ./.prettier.config.js --write ./src/client/css/blocks/*.scss",
     "start:webpack": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
     "build": "webpack --config webpack/webpack.config.prod.js  --colors"
@@ -32,6 +32,7 @@
     "chai": "^4.2.0",
     "clean-webpack-plugin": "^2.0.2",
     "copy-webpack-plugin": "^5.0.3",
+    "cors": "^2.8.5",
     "css-loader": "^3.0.0",
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",

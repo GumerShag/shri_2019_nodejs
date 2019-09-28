@@ -1,3 +1,4 @@
+import createMiddleware from './middleWare';
 class Store {
     constructor(reducer) {
         this._state = undefined;
@@ -13,7 +14,10 @@ class Store {
     }
 
     dispatch(action) {
-        debugger
+        if (typeof action === 'function') {
+            action(this.dispatch.bind(this));
+            return;
+        }
         this._state = this._reducer(this._state, action);
         this._notifyListeners();
     }

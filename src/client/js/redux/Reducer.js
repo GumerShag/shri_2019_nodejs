@@ -7,10 +7,13 @@ const reducer = (state, action) => {
                 ...state,
                 name: action.payload
             };
+        case Types.SET_FILES:
+            return {...state, files: action.files};
         case Types.INIT:
         default:
             return {
-                name: "Anon"
+                name: "",
+                files: []
             }
     }
 };

@@ -8,7 +8,9 @@ const args = require('minimist')(process.argv.slice(2));
 const app = express();
 const repoPath = args.p;
 const absoluteReposPath = path.resolve(__dirname, repoPath);
+const cors = require('cors');
 
+app.use(cors());
 app.get('/api/repos/', (req, res) => {
     let { start, limit } = req.query;
     start = start ? parseInt(start) : undefined;
@@ -34,7 +36,13 @@ app.get('/api/repos/', (req, res) => {
                 }
             }
             return res.json(reposPerPage);
-        } else res.json(repos.map(id => ({ id })));
+        } else {
+            //Add some timeout to get it more realistic
+            setTimeout(function () {
+                res.json(repos.map(id => ({ id })));
+            }, 1000)
+
+        }
     });
 });
 
@@ -77,7 +85,9 @@ app.get('/api/repos/:repositoryId/commits/:commitHash', (req, res) => {
         }
     );
 });
-
+app.get('/*', (req, res) => {
+    res.status(404).send();
+});
 app.get('/api/repos/:repositoryId/commits/:commitHash/diff', (req, res) => {
     const { repositoryId } = req.params;
     const { commitHash } = req.params;
