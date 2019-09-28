@@ -4,6 +4,9 @@ class Store {
         this._state = undefined;
         this._listeners = [];
         this._reducer = reducer;
+        this.dispatch({
+            type: 'init'
+        });
     }
 
     getState() {
