@@ -40,10 +40,25 @@ app.get('/api/repos/', (req, res) => {
             //Add some timeout to get it more realistic
             setTimeout(function () {
                 res.json(repos.map(id => ({ id })));
-            }, 1000)
+            }, 500)
 
         }
     });
+});
+
+app.get('/api/repo/search', (req, res) => {
+    exec(
+        `git ls-tree -r master --name-only`,
+        {cwd: `${absoluteReposPath}`},
+        (err, content) => {
+            if (err) {
+                res.status(500).json({error: err});
+                return;
+            }
+            const contentList = content.split('\n');
+            res.json(contentList.filter(name => name).map(name => {return {id: path.basename(name)}}));
+        }
+    );
 });
 
 app.get('/api/repos/:repositoryId/commits/:commitHash', (req, res) => {
@@ -228,3 +243,4 @@ app.route('/api/repos/:repositoryId')
     });
 
 app.listen(3000);
+console.log("Server started on http://localhost:3000");

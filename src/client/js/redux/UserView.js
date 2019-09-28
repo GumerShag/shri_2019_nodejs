@@ -1,6 +1,6 @@
-import View from './View'
+import View from './View';
 
-class UserView extends View{
+class UserView extends View {
     constructor(el, store) {
         super(el, store);
     }
@@ -10,7 +10,7 @@ class UserView extends View{
     }
 
     render({ name }) {
-        return `<div class="text text_size-s">results for: ${name}</div>`
+        return `<div class="text text_size-s">results for: ${name}</div>`;
     }
 }
 

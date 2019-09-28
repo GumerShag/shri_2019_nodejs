@@ -6,7 +6,7 @@ class Store {
         this._reducer = reducer;
         this.dispatch({
             type: 'init'
-        })
+        });
     }
 
     getState() {
@@ -24,16 +24,16 @@ class Store {
 
     subscribe(cb) {
         this._listeners.push(cb);
-        return function () {
+        return function() {
             const index = this._listeners.indexOf(cb);
-            this._listeners = this._listeners.splice(index, 1)
-        }
+            this._listeners = this._listeners.splice(index, 1);
+        };
     }
 
     _notifyListeners() {
-        this._listeners.forEach((listener) => {
-            listener(this._state)
-        })
+        this._listeners.forEach(listener => {
+            listener(this._state);
+        });
     }
 }
 

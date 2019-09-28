@@ -7,8 +7,10 @@
     "test": "mocha test/*-test.js --timeout 5000",
     "start": "node ./src/server/server.js",
     "fix:css": "prettier --config ./.prettier.config.js --write ./src/client/css/blocks/*.scss",
+    "fix:js": "prettier --config ./.prettier.config.js --write ./src/client/**/*.js",
     "start:webpack": "webpack-dev-server --open --config webpack/webpack.config.dev.js",
-    "build": "webpack --config webpack/webpack.config.prod.js  --colors"
+    "build": "webpack --config webpack/webpack.config.prod.js  --colors",
+    "start:env": "webpack-dev-server --open --config webpack/webpack.config.dev.js"
   },
   "repository": {
     "type": "git",

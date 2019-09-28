@@ -6,9 +6,8 @@ class View {
         this._prepareRender(store.getState());
     }
 
-
     _prepareRender(state) {
-        this._el.innerHTML = this.render(state)
+        this._el.innerHTML = this.render(state);
     }
 
     render() {

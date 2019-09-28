@@ -1,6 +1,6 @@
-import View from './View'
+import View from './View';
 
-class UserView extends View{
+class UserView extends View {
     constructor(el, store) {
         super(el, store);
     }
@@ -10,8 +10,9 @@ class UserView extends View{
     }
 
     render({ files }) {
-        const filesList = files.map(file => {
-            return `
+        const filesList = files
+            .map(file => {
+                return `
                 <tr class="data-table-row">
                     <td class="data-table-row__cell data-table-row__cell-name">
                         <span class="icon icon-plus__icon_indent-r_l">
@@ -33,8 +34,9 @@ class UserView extends View{
                     </td>
                     <td class="data-table-row__cell data-table-row__cell-updated"><span class="text text_color-primary">4s ago</span></td>
                     </td>
-                </tr>`
-        }).join('');
+                </tr>`;
+            })
+            .join('');
 
         return filesList ? filesList : '';
     }
