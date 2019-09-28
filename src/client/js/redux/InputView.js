@@ -43,6 +43,7 @@ class UserView extends View {
     }
 
     _onInput(event) {
+        //Wait for 1s before dispatching action
         clearTimeout(this._delayTimer);
         let store = this._store;
         this._delayTimer = setTimeout(function() {

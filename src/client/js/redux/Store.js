@@ -4,9 +4,6 @@ class Store {
         this._state = undefined;
         this._listeners = [];
         this._reducer = reducer;
-        this.dispatch({
-            type: 'init'
-        });
     }
 
     getState() {
@@ -14,12 +11,13 @@ class Store {
     }
 
     dispatch(action) {
+        //If action is function call this function else run reducer
         if (typeof action === 'function') {
             action(this.dispatch.bind(this));
             return;
         }
         this._state = this._reducer(this._state, action);
-        this._notifyListeners();
+        this._notify();
     }
 
     subscribe(cb) {
@@ -30,7 +28,7 @@ class Store {
         };
     }
 
-    _notifyListeners() {
+    _notify() {
         this._listeners.forEach(listener => {
             listener(this._state);
         });
