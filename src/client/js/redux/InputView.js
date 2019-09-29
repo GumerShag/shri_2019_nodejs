@@ -1,33 +1,6 @@
 import View from './View';
-import { setNameAction, setFilesAction } from './Actions';
 
-const showFilesList = name => dispatch => {
-    return fetch('http://localhost:3000/api/repos')
-        .then(response => {
-            return response.json();
-        })
-        .then(files => {
-            const filteredFilesList = files.filter(file => {
-                return file.id.toLowerCase().includes(name.toLowerCase());
-            });
-            dispatch(setFilesAction(filteredFilesList));
-            dispatch(setNameAction(name));
-        });
-};
-
-const findFilesByName = name => dispatch => {
-    return fetch('http://localhost:3000/api/repo/search')
-        .then(response => {
-            return response.json();
-        })
-        .then(files => {
-            const filteredFilesList = files.filter(file => {
-                return file.id.toLowerCase().includes(name.toLowerCase());
-            });
-            dispatch(setFilesAction(filteredFilesList));
-            dispatch(setNameAction(name));
-        });
-};
+import {showFilesList, findFilesByName} from './middleWare'
 
 class UserView extends View {
     constructor(el, store) {
